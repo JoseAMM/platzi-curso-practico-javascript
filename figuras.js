@@ -27,12 +27,10 @@ console.group("Triangulos");
 
 function areaTriangulo (lado, base){
     
-    const cosI = (Math.acos((base/2)/lado) * 180) / Math.PI;
-    const sen = Math.sin(cosI);
-    const altura = ((sen *8)*180)/Math.PI;
-    return altura;
-} 
-
+    const altura = Math.sqrt(Math.pow(lado,2) - (base/2));
+    area = (base*altura)/2;
+    return area;
+}
 
 
 function perimetroTriangulo (lado1, lado2, base) {
@@ -110,4 +108,35 @@ function calcularPerimetroTriangulo(){
     const perimetro = perimetroTriangulo(value, value2, value3);
     alert(perimetro);
     
+}
+function calcularAreaTriangulo(){
+    const input = document.getElementById("InputTriangulo1");
+    const value = Number(input.value);
+    
+    const input2 = document.getElementById("InputTriangulo2");
+    const value2 = Number(input2.value);
+
+    const input3 = document.getElementById("InputTriangulo3");
+    const value3 = Number(input3.value);
+
+    const area = areaTriangulo(value, value3);
+    alert(area);
+}
+
+// Funciones Circulo
+
+function calcularPerimetroCirculo(){
+    const input = document.getElementById("InputCirculo");
+    const value = Number(input.value);
+
+    const perimetro = diametroCirculo(value) * Math.PI;
+    alert(perimetro);
+}
+
+function calcularAreaCirculo(){
+    const input = document.getElementById("InputCirculo");
+    const value = Number(input.value);
+
+    const area = areaCirculo(value);
+    alert(area);
 }
